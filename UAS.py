@@ -26,7 +26,7 @@ for i in range(1971,2016):
     list_tahun.append(i)
 tahun = st.sidebar.selectbox("Pilih tahun", list_tahun)
 
-n_tampil = st.sidebar.number_input("Jumlah negara yang ditampilkan", min_value=1, max_value=100, value=10)
+n_tampil = st.sidebar.slider('Jumlah negara yang ditampilkan', 1, 10, 5)
 
 
 total_pertahun = list()
