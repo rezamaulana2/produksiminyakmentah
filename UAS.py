@@ -38,12 +38,7 @@ df1 = df.loc[df["kode_negara"]==kode]
 for i in df1["produksi"]:
     total_pertahun.append(i)
 
-fig, ax = plt.subplots()
-ax.bar(list_tahun, total_pertahun)
-ax.set_xticklabels(list_tahun, rotation=45)
-ax.set_xlabel("Tahun", fontsize=12)
-ax.set_ylabel("Total jumlah produksi", fontsize=12)
-st.pyplot(fig)
+
 
 sorted_value = df.sort_values(["produksi"], ascending=[0])
 
