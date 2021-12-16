@@ -2,9 +2,7 @@ import json
 import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
-from matplotlib import cm
-from PIL import Image
-import numpy as np
+
 
 df = pd.read_csv("produksi_minyak_mentah.csv")
 f=open("kode_negara_lengkap.json")
