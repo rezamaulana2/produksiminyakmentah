@@ -47,6 +47,8 @@ ax.bar(list_tahun, total_pertahun,color=colors)
 ax.set_xticklabels(list_tahun, rotation=90)
 ax.set_xlabel("Tahun", fontsize=12)
 ax.set_ylabel("Total jumlah produksi", fontsize=12)
+plt.tight_layout()
+
 st.pyplot(fig)
 
 sorted_value = df.sort_values(["produksi"], ascending=[0])
