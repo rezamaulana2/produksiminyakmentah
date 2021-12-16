@@ -21,7 +21,7 @@ negara = st.sidebar.selectbox("Pilih negara", list_negara)
 
 list_tahun = list()
 for i in range(1971,2016):
-    list_tahun.append(float(i))
+    list_tahun.append(int(i))
 tahun = st.sidebar.selectbox("Pilih tahun", list_tahun)
 
 n_tampil = st.sidebar.number_input("Jumlah negara yang ditampilkan", min_value=1, max_value=100, value=10)
@@ -35,7 +35,7 @@ for i in data:
         name = i["name"]
 df1 = df.loc[df["kode_negara"]==kode]
 for i in df1["produksi"]:
-    total_pertahun.append(float(i))
+    total_pertahun.append(int(i))
 
 fig, ax = plt.subplots()
 ax.plot(list_tahun, total_pertahun)
