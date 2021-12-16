@@ -10,7 +10,7 @@ df = pd.read_csv("produksi_minyak_mentah.csv")
 f=open("kode_negara_lengkap.json")
 data=json.load(f)
 
-st.set_page_config(layout="wide")  # this needs to be the first Streamlit command called
+st.set_page_config(layout="wide")
 st.title("Statistik Data Produksi Minyak Mentah")
 left_col, mid_col, right_col = st.columns(3)
 st.sidebar.title("Pengaturan")
@@ -46,13 +46,13 @@ sorted_value = df.sort_values(["produksi"], ascending=[0])
 data_tahun = sorted_value.loc[sorted_value["tahun"]==tahun]
 jumlah_negara = int(n_tampil)
 df2=data_tahun[0:jumlah_negara]
-mid_col.subheader("GrafikTop "+str(jumlah_negara)+" Jumlah Produksi Minyak Mentah Terbesar pada Tahun "+str(tahun))
+mid_col.subheader("Grafik Top "+str(jumlah_negara)+" Jumlah Produksi Minyak Mentah Terbesar pada Tahun "+str(tahun))
 df2.plot(kind="bar",x="kode_negara",y="produksi", title="Top "+str(jumlah_negara)+" Jumlah Produksi Minyak Mentah Terbesar pada Tahun "+str(tahun))
 mid_col.pyplot()
 
 data_value=sorted_value.groupby("kode_negara")["produksi"].sum()
 df3=data_value.nlargest(jumlah_negara)
-right_col.subheader("Top "+str(jumlah_negara)+" Jumlah Produksi Minyak Mentah Terbesar Kumulatif")
+right_col.subheader("Grafik Top "+str(jumlah_negara)+" Jumlah Produksi Minyak Mentah Terbesar Kumulatif")
 df3.plot(kind="bar",x="kode_negara",y="produksi", title="Top "+str(jumlah_negara)+" Jumlah Produksi Minyak Mentah Terbesar Kumulatif")
 right_col.pyplot()
 
