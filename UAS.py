@@ -19,7 +19,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 list_negara = list()
 for i in data:
     list_negara.append(i["name"])
-negara = st.sidebar.selectbox("Pilih negara", list_negara, 140)
+negara = st.sidebar.selectbox("Pilih negara", list_negara, 104)
 
 list_tahun = list()
 for i in range(1971,2016):
